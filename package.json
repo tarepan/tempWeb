@@ -1,18 +1,22 @@
 {
   "name": "tempweb",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Template for Web Development",
-  "main": "index.ts",
+  "main": "dist/main.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "webpack-dev-server --open",
+    "build": "webpack",
+    "prepublishOnly": "npm run build",
     "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tarepan/tempWeb.git"
   },
-  "author": "Tarepan",
+  "author": "tarepan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tarepan/tempWeb/issues"
