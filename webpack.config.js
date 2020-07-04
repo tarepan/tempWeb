@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    main: "./src/index.ts"
+    main: "./src/index.ts",
     /*x_head: "./src/headInserted.ts"*/
   },
   devtool: "inline-source-map",
@@ -14,29 +14,29 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: "ts-loader",
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".ts", ".js"],
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].js"
+    filename: "[name].js",
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.template.html",
       chunks: [
-        "main"
+        "main",
         // "x_head"
-      ]
-    })
+      ],
+    }),
     // new HtmlWebpackInjector()
   ],
   devServer: {
     contentBase: path.join(__dirname, "dist"),
-    port: 8000
-  }
+    port: 8000,
+  },
 };
